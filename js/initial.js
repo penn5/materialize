@@ -6,6 +6,10 @@ if (typeof(jQuery) === 'undefined') {
     jQuery = $ = require('jquery');
   // Else use the dollar sign alias.
   } else {
-    jQuery = $;
+	try {
+		jQuery = $;
+	} catch (err) {
+		jQuery = window.$
+	}
   }
 }
